@@ -1,0 +1,5 @@
+font/
+node_modules/
+config.js
+*.png
+!images/*.png
