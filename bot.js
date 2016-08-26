@@ -29,7 +29,19 @@ function random_from_array(array) {
 // load config
 var config = require('./config.js');
 var slack_api_token = config.slack_api_token;
-var texts = random_from_array(config.potential_texts);
+
+// figure out what text to use
+var texts = [];
+if (process.argv[2] !== undefined && process.argv[3] !== undefined) {
+    console.log('using given words: ' + process.argv[2] + ' + ' + process.argv[3]);
+    texts = [ process.argv[2], process.argv[3] ];
+} else if (process.argv[2] !== undefined && process.argv[3] === undefined) {
+    console.log('using given word: ' + process.argv[2]);
+    texts = [ process.argv[2] ];
+} else {
+    console.log('picking a phrase from config');
+    texts = random_from_array(config.potential_texts);
+}
 
 // some advanced config i left out of the file
 var text_file = 'text_avatar.png';

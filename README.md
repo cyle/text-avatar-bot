@@ -36,11 +36,24 @@ That's it. You should see some helpful messages in your terminal window. You sho
 
 Run it over and over again to try out random words. See how it feels.
 
+Also, if you want to manually specify a word, you can supply it directly:
+
+```
+$> node bot.js wat
+```
+
+or two words, each will be on a new line:
+
+```
+$> node bot.js lol wat
+```
+
 ## To do list
 
 Some neat things to do...
 
-- [ ] Support for manually entering a word/lines into the command line, i.e. `node bot.js lol` to make a `lol` avatar
 - [ ] Better Slack support. It's lazy right now.
 - [ ] wtf is up with having to use curl? can't get `request` or `https` libs to work.
 - [ ] More flexible font rendering options; it's really lazy right now.
+- [x] Support for manually entering a word/lines into the command line, i.e. `node bot.js lol` to make a `lol` avatar
+
